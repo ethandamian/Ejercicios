@@ -37,8 +37,10 @@ public class Main {
                         int instrumentos = 0;
                         // La opcion para el tipo de instrumento.
                         int opcion2 = 0;
+                        System.out.println("================================================");
                         System.out.println("¿Cuantos instrumentos quiere vender?");
                         instrumentos = scanner.nextInt();
+                        System.out.println("================================================");
                         System.out.print("¿De que tipo de instrumento?");
                         System.out.println("\n1. Percusion");
                         System.out.println("2. Cuerdas");
@@ -50,8 +52,10 @@ public class Main {
 
                                 // Se llena un arreglo con instruemntos aleatorios.
                                 Percusion[] percusion = llenarInstrumentos(instrumentos, true);
+                                System.out.println("================================================");
+
                                 // Se obtiene la suma de todos los precios.
-                                System.out.println("El precio total de vender " + instrumentos
+                                System.out.println("\nEl precio total de vender " + instrumentos
                                         + " instrumentos de percusion es de: " + obtenerPrecios(percusion));
                                 break;
                             case 2:
@@ -59,11 +63,12 @@ public class Main {
 
                                 Percusion[] cuerda = llenarInstrumentos(instrumentos, false);
 
+                                System.out.println("================================================");
+
                                 // Se obtiene la suma de todos los precios.
-                                System.out.println("El precio total de vender " + instrumentos
+                                System.out.println("\nEl precio total de vender " + instrumentos
                                         + " instrumentos de cuerda es de: " + obtenerPrecios(cuerda));
 
-                                imprimirArreglo(cuerda);
                                 break;
                         }
                         System.out.println("Presione enter para continuar...");
@@ -225,6 +230,9 @@ public class Main {
         return suma;
     }
 
+    /**
+     * Metodo que imprime un arreglo de instrumentos.
+     */
     public static void imprimirArreglo(Percusion[] arreglo) {
         for (int i = 0; i < arreglo.length; i++) {
             System.out.println("\n" + arreglo[i]);
