@@ -4,10 +4,8 @@
  * @author Ana Sofia Mecalco Rosas
  * @version 12/06/2022.
  */
-public class Masajista extends SeleccionFutbol {
-    private String apellidos;
+public class Masajista extends IntegranteFutbol {
     private int edad;
-    private int idCertificacion;
     private int aniosDeExperencia;
 
     /**
@@ -16,25 +14,14 @@ public class Masajista extends SeleccionFutbol {
      * @param id                El id de el/la masajista.
      * @param nombre            El nombre de el/la masajista.
      * @param apellidos         Apellidos de el/la masajista.
-     * @param edad              La edad de el/la masajista.
      * @param idCertificacion   El id de certificacion de el/la masajista.
+     * @param edad              La edad de el/la masajista.
      * @param aniosDeExperencia Los años de experencia de el/la masajista.
      */
-    public Masajista(int id, String nombre, String apellidos, int edad, int idCertificacion, int aniosDeExperencia) {
-        super(id, nombre);
-        this.apellidos = apellidos;
+    public Masajista(int id, String nombre, String apellidos, int idCertificacion, int edad, int aniosDeExperencia) {
+        super(id, nombre, apellidos, idCertificacion);
         this.edad = edad;
-        this.idCertificacion = idCertificacion;
         this.aniosDeExperencia = aniosDeExperencia;
-    }
-
-    /**
-     * Metodo que devuelve los apellidos del entrenador.
-     * 
-     * @return Los apellidos del entrenador.
-     */
-    public String obtenerApellidos() {
-        return this.apellidos;
     }
 
     /**
@@ -45,15 +32,6 @@ public class Masajista extends SeleccionFutbol {
     public int obtenerEdad() {
 
         return this.edad;
-    }
-
-    /**
-     * Metodo que devuelve el ide de certificacion de el/la masajista..
-     * 
-     * @return el id de certificacion de el/la masajista.
-     */
-    public int obtenerIdCertificacion() {
-        return this.idCertificacion;
     }
 
     /**
@@ -72,15 +50,6 @@ public class Masajista extends SeleccionFutbol {
      */
     public void asignaEdad(int edad) {
         this.edad = edad;
-    }
-
-    /**
-     * Metodo que asigna un nuevo id de certififacion del entrenador.
-     * 
-     * @param idCertificacion El nuevo id de certificacion.
-     */
-    public void asignaIdCertificacion(int idCertificacion) {
-        this.idCertificacion = idCertificacion;
     }
 
     /**
@@ -106,7 +75,7 @@ public class Masajista extends SeleccionFutbol {
      */
     @Override
     public String toString() {
-        return super.toString() + "\nApellidos: " + this.apellidos + "\nEdad: " + this.edad
-                + "\nId de Certificacion: " + this.idCertificacion + "\nAnios de experencia: " + this.aniosDeExperencia;
+        return super.toString() + "\nEdad: " + this.edad
+                + "\nAnios de experencia: " + this.aniosDeExperencia;
     }
 }

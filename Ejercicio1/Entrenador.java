@@ -5,10 +5,7 @@
  * @author Ana Sofia Mecalco Rosas
  * @version 12/06/2022.
  */
-public class Entrenador extends SeleccionFutbol {
-
-    private String apellidos;
-    private int idCertificacion;
+public class Entrenador extends IntegranteFutbol {
     private String CURP;
 
     /**
@@ -21,29 +18,9 @@ public class Entrenador extends SeleccionFutbol {
      * @param CURP            El CURP del entrenador.
      */
     public Entrenador(int id, String nombre, String apellidos, int idCertificacion, String CURP) {
-        super(id, nombre);
-        this.apellidos = apellidos;
-        this.idCertificacion = idCertificacion;
+        super(id, nombre, apellidos, idCertificacion);
         this.CURP = CURP;
 
-    }
-
-    /**
-     * Metodo que devuelve los apellidos del entrenador.
-     * 
-     * @return Los apellidos del entrenador.
-     */
-    public String obtenerApellidos() {
-        return this.apellidos;
-    }
-
-    /**
-     * Metodo que devuelve el ide de certificacion del entrenador.
-     * 
-     * @return el id de certificacion del entrenador.
-     */
-    public int obtenerIdCertificacion() {
-        return this.idCertificacion;
     }
 
     /**
@@ -53,15 +30,6 @@ public class Entrenador extends SeleccionFutbol {
      */
     public String obtenerCURP() {
         return this.CURP;
-    }
-
-    /**
-     * Metodo que asigna un nuevo id de certififacion del entrenador.
-     * 
-     * @param idCertificacion El nuevo id de certificacion.
-     */
-    public void asignaIdCertificacion(int idCertificacion) {
-        this.idCertificacion = idCertificacion;
     }
 
     /**
@@ -86,7 +54,6 @@ public class Entrenador extends SeleccionFutbol {
      */
     @Override
     public String toString() {
-        return super.toString() + "\nApellidos: " + this.apellidos + "\nId Certificacion: "
-                + this.idCertificacion + "\nCURP: " + this.CURP;
+        return super.toString() + "\nCURP: " + this.CURP;
     }
 }
